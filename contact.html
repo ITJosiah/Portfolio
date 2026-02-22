@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me | Josiah Luke Bustos</title>
+    <meta name="description" content="Get in touch with Josiah Luke Bustos.">
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Leaflet.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+</head>
+
+<body>
+    <!-- ======================== HEADER / NAV ======================== -->
+    <header id="header">
+        <nav class="navbar">
+            <a href="index.html" class="logo" aria-label="Home">
+                <svg viewBox="0 0 60 60" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="4" y="4" width="52" height="52" rx="8" stroke="#c9a84c" stroke-width="3" />
+                    <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle"
+                        font-family="Playfair Display, serif" font-size="26" font-weight="700" fill="#c9a84c">JL</text>
+                </svg>
+            </a>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Me</a></li>
+                <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ======================== CONTACT SECTION ======================== -->
+    <main>
+        <section id="contact" class="contact" style="padding-top: 120px;">
+            <div class="section-container">
+                <h2 class="section-title reveal">Contact <span class="gold">Me</span></h2>
+
+                <!-- ======== CONTACT GRID: INFO + FORM ======== -->
+                <div class="contact-grid reveal delay-1">
+
+                    <!-- LEFT: Contact Info & Socials -->
+                    <div class="contact-info">
+                        <h3>Let's Connect</h3>
+                        <p>Feel free to reach out for collaborations, project inquiries, or just to say hello.
+                            I'm always open to new opportunities and conversations.</p>
+
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Phone</strong>
+                                    <span>+63 909 282 3205</span>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email</strong>
+                                    <span>bustosjosiahluke.cnsc@gmail.com</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Accounts -->
+                        <div class="contact-socials">
+                            <h4 class="about-section-heading"><i class="fas fa-share-alt"></i> Find Me On</h4>
+                            <div class="social-links-grid">
+                                <a href="https://www.facebook.com/JosiahLukee/" target="_blank"
+                                    rel="noopener noreferrer" class="social-card">
+                                    <i class="fab fa-facebook-f"></i>
+                                    <span>Facebook</span>
+                                </a>
+                                <a href="https://www.instagram.com/lukeengoood/" target="_blank"
+                                    rel="noopener noreferrer" class="social-card">
+                                    <i class="fab fa-instagram"></i>
+                                    <span>Instagram</span>
+                                </a>
+                                <a href="https://linkedin.com/in/josiah-luke-bustos-014959309" target="_blank"
+                                    rel="noopener noreferrer" class="social-card">
+                                    <i class="fab fa-linkedin-in"></i>
+                                    <span>LinkedIn</span>
+                                </a>
+                                <a href="https://github.com/ITJosiah" target="_blank" rel="noopener noreferrer"
+                                    class="social-card">
+                                    <i class="fab fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: Contact Form -->
+                    <div class="contact-form">
+                        <form id="contactForm" novalidate>
+                            <div class="form-group">
+                                <label for="from_name">Full Name</label>
+                                <input type="text" id="from_name" name="from_name" placeholder="Your full name"
+                                    required>
+                                <span class="form-error" id="nameError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="from_email">Email Address</label>
+                                <input type="email" id="from_email" name="from_email"
+                                    placeholder="your.email@example.com" required>
+                                <span class="form-error" id="emailError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder="What's this about?"
+                                    required>
+                                <span class="form-error" id="subjectError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="6" placeholder="Write your message here..."
+                                    required></textarea>
+                                <span class="form-error" id="messageError"></span>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
+                                <span class="btn-text"><i class="fas fa-paper-plane"></i> Send Message</span>
+                                <span class="btn-loading" style="display:none;"><i class="fas fa-spinner fa-spin"></i>
+                                    Sending...</span>
+                            </button>
+                        </form>
+
+                        <!-- Form Response -->
+                        <div id="formResponse" class="form-response" style="display: none;"></div>
+                    </div>
+                </div>
+
+                <!-- ======== APPOINTMENT REQUEST ======== -->
+                <div class="appointment-section reveal delay-2">
+                    <h3 class="section-subtitle"><i class="fas fa-calendar-check"></i> Request an <span
+                            class="gold">Appointment</span></h3>
+                    <p class="appointment-desc">Want to discuss a project or opportunity? Schedule a meeting with me —
+                        face-to-face or online.</p>
+
+                    <form id="appointmentForm" class="appointment-form" novalidate>
+                        <div class="appt-form-grid">
+                            <div class="form-group">
+                                <label for="appt_name">Full Name</label>
+                                <input type="text" id="appt_name" name="appt_name" placeholder="Your full name"
+                                    required>
+                                <span class="form-error" id="apptNameError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="appt_email">Email Address</label>
+                                <input type="email" id="appt_email" name="appt_email"
+                                    placeholder="your.email@example.com" required>
+                                <span class="form-error" id="apptEmailError"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Meeting Type</label>
+                            <div class="meeting-type-options">
+                                <label class="meeting-type-card">
+                                    <input type="radio" name="meeting_type" value="face-to-face" required>
+                                    <div class="meeting-type-content">
+                                        <i class="fas fa-handshake"></i>
+                                        <span>Face-to-Face</span>
+                                    </div>
+                                </label>
+                                <label class="meeting-type-card">
+                                    <input type="radio" name="meeting_type" value="online" required>
+                                    <div class="meeting-type-content">
+                                        <i class="fas fa-video"></i>
+                                        <span>Online Meeting</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <span class="form-error" id="apptTypeError"></span>
+                        </div>
+
+                        <div class="appt-form-grid">
+                            <div class="form-group">
+                                <label for="appt_date">Preferred Date</label>
+                                <input type="date" id="appt_date" name="appt_date" required>
+                                <span class="form-error" id="apptDateError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="appt_time">Preferred Time</label>
+                                <input type="time" id="appt_time" name="appt_time" required>
+                                <span class="form-error" id="apptTimeError"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="appt_purpose">Purpose / Agenda</label>
+                            <textarea id="appt_purpose" name="appt_purpose" rows="4"
+                                placeholder="Briefly describe what you'd like to discuss..." required></textarea>
+                            <span class="form-error" id="apptPurposeError"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-submit" id="apptSubmitBtn">
+                            <span class="btn-text"><i class="fas fa-calendar-plus"></i> Request Appointment</span>
+                            <span class="btn-loading" style="display:none;"><i class="fas fa-spinner fa-spin"></i>
+                                Submitting...</span>
+                        </button>
+                    </form>
+
+                    <div id="apptResponse" class="form-response" style="display: none;"></div>
+                </div>
+
+                <!-- ======== LEAFLET MAP ======== -->
+                <div class="contact-map-section reveal delay-3">
+                    <h3 class="about-section-heading"><i class="fas fa-map-marker-alt"></i> My Location</h3>
+                    <p class="map-description">Based in Basud, Camarines Norte, Philippines</p>
+                    <div id="contactMap" class="contact-map"></div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- ======================== FOOTER ======================== -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Josiah Luke <span class="gold">Bustos</span></h3>
+                <p>Aspiring Cybersecurity Professional</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="skills.html">Skills</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-socials">
+                <a href="https://github.com/ITJosiah" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/josiah-luke-bustos-014959309" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:bustosjosiahluke.cnsc@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Josiah Luke Bustos. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Leaflet.js -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="portfolio.js"></script>
+
+    <script>
+        // ==================== EMAILJS INIT ====================
+        // IMPORTANT: Replace these with your actual EmailJS credentials
+        const EMAILJS_PUBLIC_KEY = 'oyWQlB5lUg39oUzU4';   // From EmailJS > Account > API Keys
+        const EMAILJS_SERVICE_ID = 'service_nd1921a';   // From EmailJS > Email Services
+        const EMAILJS_TEMPLATE_ID = 'template_yy49d2c'; // From EmailJS > Email Templates
+
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+
+        // ==================== FORM VALIDATION & SUBMISSION ====================
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formResponse = document.getElementById('formResponse');
+
+        function validateEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        function showError(inputId, errorId, message) {
+            const input = document.getElementById(inputId);
+            const error = document.getElementById(errorId);
+            input.classList.add('input-error');
+            error.textContent = message;
+            error.style.display = 'block';
+        }
+
+        function clearError(inputId, errorId) {
+            const input = document.getElementById(inputId);
+            const error = document.getElementById(errorId);
+            input.classList.remove('input-error');
+            error.textContent = '';
+            error.style.display = 'none';
+        }
+
+        function clearAllErrors() {
+            clearError('from_name', 'nameError');
+            clearError('from_email', 'emailError');
+            clearError('subject', 'subjectError');
+            clearError('message', 'messageError');
+        }
+
+        function validateForm() {
+            let isValid = true;
+            clearAllErrors();
+
+            const name = document.getElementById('from_name').value.trim();
+            const email = document.getElementById('from_email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name) {
+                showError('from_name', 'nameError', 'Please enter your name.');
+                isValid = false;
+            }
+
+            if (!email) {
+                showError('from_email', 'emailError', 'Please enter your email address.');
+                isValid = false;
+            } else if (!validateEmail(email)) {
+                showError('from_email', 'emailError', 'Please enter a valid email address.');
+                isValid = false;
+            }
+
+            if (!subject) {
+                showError('subject', 'subjectError', 'Please enter a subject.');
+                isValid = false;
+            }
+
+            if (!message) {
+                showError('message', 'messageError', 'Please enter your message.');
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnLoading = submitBtn.querySelector('.btn-loading');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            if (!validateForm()) return;
+
+            // Show loading state
+            if (btnText) btnText.style.display = 'none';
+            if (btnLoading) btnLoading.style.display = 'inline-flex';
+            submitBtn.disabled = true;
+
+            emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form)
+                .then(function () {
+                    formResponse.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully. I\'ll get back to you soon.';
+                    formResponse.className = 'form-response form-success';
+                    formResponse.style.display = 'flex';
+                    form.reset();
+                    clearAllErrors();
+                })
+                .catch(function (error) {
+                    formResponse.innerHTML = '<i class="fas fa-exclamation-circle"></i> Oops! Something went wrong. Please try again or reach out via email directly.';
+                    formResponse.className = 'form-response form-error-response';
+                    formResponse.style.display = 'flex';
+                    console.warn('EmailJS error:', error);
+                })
+                .finally(function () {
+                    if (btnText) btnText.style.display = 'inline-flex';
+                    if (btnLoading) btnLoading.style.display = 'none';
+                    submitBtn.disabled = false;
+                });
+        });
+
+        // Real-time validation: clear error when user starts typing
+        ['from_name', 'from_email', 'subject', 'message'].forEach(function (id) {
+            document.getElementById(id).addEventListener('input', function () {
+                const errorId = id === 'from_name' ? 'nameError'
+                    : id === 'from_email' ? 'emailError'
+                        : id === 'subject' ? 'subjectError'
+                            : 'messageError';
+                clearError(id, errorId);
+            });
+        });
+
+        // ==================== LEAFLET MAP ====================
+        (function () {
+            const map = L.map('contactMap', {
+                scrollWheelZoom: false
+            }).setView([14.065, 122.933], 13); // Basud, Camarines Norte
+
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/">OSM</a> | CartoDB',
+                maxZoom: 19
+            }).addTo(map);
+
+            // Custom gold marker
+            const goldIcon = L.divIcon({
+                className: 'custom-map-marker',
+                html: '<i class="fas fa-map-marker-alt" style="color:#c9a84c;font-size:2rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.5));"></i>',
+                iconSize: [30, 40],
+                iconAnchor: [15, 40]
+            });
+
+            L.marker([14.065, 122.933], { icon: goldIcon })
+                .addTo(map)
+                .bindPopup('<strong style="color:#c9a84c;">Basud, Camarines Norte</strong><br>Philippines')
+                .openPopup();
+        })();
+
+        // ==================== FIREBASE & APPOINTMENT BOOKING ====================
+        (function () {
+            // Initialize Firebase
+            const firebaseConfig = {
+                apiKey: "AIzaSyDZEBERZtbJImd23xFdsXu20XWUR0uzCcQ",
+                authDomain: "portfolio-cc520.firebaseapp.com",
+                projectId: "portfolio-cc520",
+                storageBucket: "portfolio-cc520.firebasestorage.app",
+                messagingSenderId: "170767705445",
+                appId: "1:170767705445:web:d26f9aac5c90ed8262ed8c",
+                measurementId: "G-3265NLXSTW"
+            };
+
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+
+            // Elements
+            const apptForm = document.getElementById('appointmentForm');
+            const apptSubmitBtn = document.getElementById('apptSubmitBtn');
+            const apptResponse = document.getElementById('apptResponse');
+            const apptBtnText = apptSubmitBtn ? apptSubmitBtn.querySelector('.btn-text') : null;
+            const apptBtnLoading = apptSubmitBtn ? apptSubmitBtn.querySelector('.btn-loading') : null;
+
+            if (!apptForm) return;
+
+            // Set min date to today
+            const dateInput = document.getElementById('appt_date');
+            if (dateInput) {
+                const today = new Date().toISOString().split('T')[0];
+                dateInput.setAttribute('min', today);
+            }
+
+            // Validation helpers
+            function showApptError(inputId, errorId, msg) {
+                const input = document.getElementById(inputId);
+                const error = document.getElementById(errorId);
+                if (input) input.classList.add('input-error');
+                if (error) { error.textContent = msg; error.style.display = 'block'; }
+            }
+
+            function clearApptError(inputId, errorId) {
+                const input = document.getElementById(inputId);
+                const error = document.getElementById(errorId);
+                if (input) input.classList.remove('input-error');
+                if (error) { error.textContent = ''; error.style.display = 'none'; }
+            }
+
+            function clearAllApptErrors() {
+                clearApptError('appt_name', 'apptNameError');
+                clearApptError('appt_email', 'apptEmailError');
+                clearApptError('appt_date', 'apptDateError');
+                clearApptError('appt_time', 'apptTimeError');
+                clearApptError('appt_purpose', 'apptPurposeError');
+                const typeErr = document.getElementById('apptTypeError');
+                if (typeErr) { typeErr.textContent = ''; typeErr.style.display = 'none'; }
+                document.querySelectorAll('.meeting-type-card').forEach(c => c.classList.remove('input-error'));
+            }
+
+            function validateApptForm() {
+                let valid = true;
+                clearAllApptErrors();
+
+                const name = document.getElementById('appt_name').value.trim();
+                const email = document.getElementById('appt_email').value.trim();
+                const type = document.querySelector('input[name="meeting_type"]:checked');
+                const date = document.getElementById('appt_date').value;
+                const time = document.getElementById('appt_time').value;
+                const purpose = document.getElementById('appt_purpose').value.trim();
+
+                if (!name) { showApptError('appt_name', 'apptNameError', 'Please enter your name.'); valid = false; }
+                if (!email) { showApptError('appt_email', 'apptEmailError', 'Please enter your email.'); valid = false; }
+                else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showApptError('appt_email', 'apptEmailError', 'Please enter a valid email.'); valid = false; }
+
+                if (!type) {
+                    const typeErr = document.getElementById('apptTypeError');
+                    if (typeErr) { typeErr.textContent = 'Please select a meeting type.'; typeErr.style.display = 'block'; }
+                    valid = false;
+                }
+
+                if (!date) { showApptError('appt_date', 'apptDateError', 'Please select a date.'); valid = false; }
+                else {
+                    const selected = new Date(date);
+                    const today = new Date();
+                    today.setHours(0, 0, 0, 0);
+                    if (selected < today) { showApptError('appt_date', 'apptDateError', 'Date must be today or later.'); valid = false; }
+                }
+
+                if (!time) { showApptError('appt_time', 'apptTimeError', 'Please select a time.'); valid = false; }
+                if (!purpose) { showApptError('appt_purpose', 'apptPurposeError', 'Please describe the purpose.'); valid = false; }
+
+                return valid;
+            }
+
+            // Real-time clear errors
+            ['appt_name', 'appt_email', 'appt_date', 'appt_time', 'appt_purpose'].forEach(function (id) {
+                const el = document.getElementById(id);
+                if (el) el.addEventListener('input', function () {
+                    const errorMap = { appt_name: 'apptNameError', appt_email: 'apptEmailError', appt_date: 'apptDateError', appt_time: 'apptTimeError', appt_purpose: 'apptPurposeError' };
+                    clearApptError(id, errorMap[id]);
+                });
+            });
+
+            // Submit handler
+            apptForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                if (!validateApptForm()) return;
+
+                // Show loading
+                if (apptBtnText) apptBtnText.style.display = 'none';
+                if (apptBtnLoading) apptBtnLoading.style.display = 'inline-flex';
+                apptSubmitBtn.disabled = true;
+
+                const appointmentData = {
+                    name: document.getElementById('appt_name').value.trim(),
+                    email: document.getElementById('appt_email').value.trim(),
+                    meetingType: document.querySelector('input[name="meeting_type"]:checked').value,
+                    date: document.getElementById('appt_date').value,
+                    time: document.getElementById('appt_time').value,
+                    purpose: document.getElementById('appt_purpose').value.trim(),
+                    status: 'pending',
+                    submittedAt: firebase.firestore.FieldValue.serverTimestamp()
+                };
+
+                db.collection('appointments').add(appointmentData)
+                    .then(function (docRef) {
+                        apptResponse.innerHTML = '<i class="fas fa-check-circle"></i> Your appointment request has been submitted successfully! I\'ll get back to you soon to confirm. <br><small>Reference: ' + docRef.id + '</small>';
+                        apptResponse.className = 'form-response form-success';
+                        apptResponse.style.display = 'flex';
+                        apptForm.reset();
+                        clearAllApptErrors();
+                    })
+                    .catch(function (error) {
+                        apptResponse.innerHTML = '<i class="fas fa-exclamation-circle"></i> Failed to submit appointment request. Please try again or contact me directly.';
+                        apptResponse.className = 'form-response form-error-response';
+                        apptResponse.style.display = 'flex';
+                        console.warn('Firestore error:', error);
+                    })
+                    .finally(function () {
+                        if (apptBtnText) apptBtnText.style.display = 'inline-flex';
+                        if (apptBtnLoading) apptBtnLoading.style.display = 'none';
+                        apptSubmitBtn.disabled = false;
+                    });
+            });
+        })();
+    </script>
+</body>
+
+</html>

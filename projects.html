@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects | Josiah Luke Bustos</title>
+    <meta name="description" content="Portfolio of projects by Josiah Luke Bustos.">
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- ======================== HEADER / NAV ======================== -->
+    <header id="header">
+        <nav class="navbar">
+            <a href="index.html" class="logo" aria-label="Home">
+                <svg viewBox="0 0 60 60" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="4" y="4" width="52" height="52" rx="8" stroke="#c9a84c" stroke-width="3" />
+                    <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle"
+                        font-family="Playfair Display, serif" font-size="26" font-weight="700" fill="#c9a84c">JL</text>
+                </svg>
+            </a>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Me</a></li>
+                <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ======================== PROJECTS SECTION ======================== -->
+    <main>
+        <section id="projects" class="projects" style="padding-top: 120px;">
+            <div class="section-container">
+                <h2 class="section-title reveal">My <span class="gold">Projects</span></h2>
+
+                <!-- ======== PROJECT 1: CFLC Website ======== -->
+                <article class="project-showcase reveal delay-1">
+                    <div class="project-showcase-image">
+                        <img src="cflc-thumbnail.png" alt="CFLC Website Homepage Screenshot" loading="lazy">
+                        <div class="project-showcase-overlay">
+                            <a href="https://itjosiah.github.io/CFLC-Website/" target="_blank" rel="noopener noreferrer"
+                                class="btn btn-primary">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-showcase-body">
+                        <span class="project-tag">Web Development</span>
+                        <h3 class="project-showcase-title">Christian Foundational Learning Center (CFLC) Official
+                            Website</h3>
+                        <p class="project-showcase-desc">
+                            A comprehensive online platform designed for Christian Foundational Learning Center, a
+                            private,
+                            non-profit school located in Basud, Camarines Norte. The primary goal of the website is to
+                            provide
+                            a digital presence that informs parents and the community about the school's academic
+                            offerings
+                            and spiritual foundation.
+                        </p>
+
+                        <div class="project-features">
+                            <h4 class="about-section-heading"><i class="fas fa-star"></i> Key Features</h4>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check-circle"></i> <strong>Engaging Homepage</strong> — Showcases
+                                    the school's motto, "Bawat bata sa Diyos ay mahalaga," and the current school year
+                                    theme, "UNITY in VISION".</li>
+                                <li><i class="fas fa-check-circle"></i> <strong>School Profile</strong> — Dedicated
+                                    "About Us" section detailing the school's history, core values (LEGACY), and its
+                                    mission and vision.</li>
+                                <li><i class="fas fa-check-circle"></i> <strong>Admission Portal</strong> — Clear
+                                    enrollment guide for Pre-School pupils, Grade 1 pupils, and transferees.</li>
+                                <li><i class="fas fa-check-circle"></i> <strong>Interactive Resources</strong> —
+                                    Quick-access buttons for curriculum, handbook, calendar, and uniform guides.</li>
+                                <li><i class="fas fa-check-circle"></i> <strong>Information Gallery</strong> —
+                                    High-quality images showcasing the campus, classrooms, and student activities.</li>
+                                <li><i class="fas fa-check-circle"></i> <strong>Contact & Location</strong> — Direct
+                                    messaging form, school contact details, and an integrated Google Maps embed.</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-tech">
+                            <h4 class="about-section-heading"><i class="fas fa-code"></i> Technologies Used</h4>
+                            <div class="tech-tags">
+                                <span class="tech-badge"><i class="fab fa-html5"></i> HTML5</span>
+                                <span class="tech-badge"><i class="fab fa-css3-alt"></i> CSS3</span>
+                                <span class="tech-badge"><i class="fab fa-js-square"></i> JavaScript</span>
+                                <span class="tech-badge"><i class="fab fa-git-alt"></i> Git & GitHub</span>
+                                <span class="tech-badge"><i class="fab fa-github"></i> GitHub Pages</span>
+                                <span class="tech-badge"><i class="fas fa-map-marker-alt"></i> Google Maps API</span>
+                            </div>
+                        </div>
+
+                        <div class="github-stats" data-repo="ITJosiah/CFLC-Website">
+                            <div class="github-stats-header">
+                                <i class="fab fa-github"></i>
+                                <span>Live from GitHub</span>
+                            </div>
+                            <div class="github-stats-badges">
+                                <span class="gh-badge"><i class="fas fa-star"></i> <span
+                                        class="gh-stars">—</span></span>
+                                <span class="gh-badge"><i class="fas fa-code-branch"></i> <span
+                                        class="gh-forks">—</span></span>
+                                <span class="gh-badge"><i class="fas fa-circle"></i> <span
+                                        class="gh-lang">—</span></span>
+                                <span class="gh-badge"><i class="fas fa-clock"></i> <span
+                                        class="gh-updated">—</span></span>
+                            </div>
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="https://itjosiah.github.io/CFLC-Website/" target="_blank" rel="noopener noreferrer"
+                                class="btn btn-primary">
+                                <i class="fas fa-external-link-alt"></i> View Live Site
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ======== PROJECT 2: CFLC Student Information Management System ======== -->
+                <article class="project-showcase reveal delay-2">
+                    <div class="project-gallery">
+                        <div class="gallery-main">
+                            <img id="galleryMainImg" src="cflc-sims-login.png" alt="CFLC SIMS Login Page"
+                                loading="lazy">
+                        </div>
+                        <div class="gallery-thumbs">
+                            <button class="gallery-thumb active"
+                                onclick="changeGalleryImage('cflc-sims-login.png', 'CFLC SIMS Login Page', this)">
+                                <i class="fas fa-sign-in-alt"></i>
+                                <span>Login</span>
+                            </button>
+                            <button class="gallery-thumb"
+                                onclick="changeGalleryImage('cflc-sims-superadmin.png', 'Super Admin Dashboard', this)">
+                                <i class="fas fa-user-shield"></i>
+                                <span>Super Admin</span>
+                            </button>
+                            <button class="gallery-thumb"
+                                onclick="changeGalleryImage('cflc-sims-admin.png', 'Admin Dashboard', this)">
+                                <i class="fas fa-user-cog"></i>
+                                <span>Admin</span>
+                            </button>
+                            <button class="gallery-thumb"
+                                onclick="changeGalleryImage('cflc-sims-teacher.png', 'Teacher Dashboard', this)">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                                <span>Teacher</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="project-showcase-body">
+                        <span class="project-tag">Desktop Application</span>
+                        <h3 class="project-showcase-title">CFLC Student Information Management System</h3>
+                        <p class="project-showcase-desc">
+                            A centralized, database-driven desktop application developed to digitalize the
+                            administrative
+                            operations of Christian Foundational Learning Center (CFLC). The system replaces manual
+                            paper-based
+                            record-keeping with a secure platform to manage the complete lifecycle of school data.
+                        </p>
+
+                        <div class="project-features">
+                            <h4 class="about-section-heading"><i class="fas fa-star"></i> Key Modules & Functionalities
+                            </h4>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check-circle"></i> <strong>Role-Based Access Control</strong> —
+                                    Three user levels: Super Admin (system config & accounts), Administrator (core
+                                    data), and Teacher (viewing & reports).</li>
+                                <li><i class="fas fa-check-circle"></i> <strong>Comprehensive Data Management</strong> —
+                                    Modules for Students, Teachers, Sections, Subjects, and Enrollments with full CRUD
+                                    operations.</li>
+                                <li><i class="fas fa-check-circle"></i> <strong>Enrollment Tracking</strong> — Tracks
+                                    school year placements, payment statuses (Paid, Partial, Unpaid), and academic year
+                                    summaries.</li>
+                                <li><i class="fas fa-check-circle"></i> <strong>Advanced Reporting</strong> — Automated,
+                                    printable reports including Master Lists, Enrollment Summaries, Teacher Loads, and
+                                    Section Analytics.</li>
+                                <li><i class="fas fa-check-circle"></i> <strong>System Integrity & Security</strong> —
+                                    Local database backups, maintenance mode, and secure credential-based
+                                    authentication.</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-tech">
+                            <h4 class="about-section-heading"><i class="fas fa-code"></i> Technologies Used</h4>
+                            <div class="tech-tags">
+                                <span class="tech-badge"><i class="fas fa-window-maximize"></i> VB.NET</span>
+                                <span class="tech-badge"><i class="fas fa-code"></i> Visual Studio 2022</span>
+                                <span class="tech-badge"><i class="fas fa-database"></i> MySQL</span>
+                                <span class="tech-badge"><i class="fas fa-server"></i> XAMPP</span>
+                                <span class="tech-badge"><i class="fas fa-link"></i> Entity Framework</span>
+                                <span class="tech-badge"><i class="fab fa-figma"></i> Figma</span>
+                                <span class="tech-badge"><i class="fas fa-project-diagram"></i> Lucid Chart</span>
+                                <span class="tech-badge"><i class="fab fa-windows"></i> Windows 11</span>
+                            </div>
+                        </div>
+
+                        <div class="github-stats" data-repo="ITJosiah/CFLC_finalsys">
+                            <div class="github-stats-header">
+                                <i class="fab fa-github"></i>
+                                <span>Live from GitHub</span>
+                            </div>
+                            <div class="github-stats-badges">
+                                <span class="gh-badge"><i class="fas fa-star"></i> <span
+                                        class="gh-stars">—</span></span>
+                                <span class="gh-badge"><i class="fas fa-code-branch"></i> <span
+                                        class="gh-forks">—</span></span>
+                                <span class="gh-badge"><i class="fas fa-circle"></i> <span
+                                        class="gh-lang">—</span></span>
+                                <span class="gh-badge"><i class="fas fa-clock"></i> <span
+                                        class="gh-updated">—</span></span>
+                            </div>
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="https://github.com/ITJosiah/CFLC_finalsys" target="_blank"
+                                rel="noopener noreferrer" class="btn btn-outline">
+                                <i class="fab fa-github"></i> View Repository
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- ======================== FOOTER ======================== -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Josiah Luke <span class="gold">Bustos</span></h3>
+                <p>Aspiring Cybersecurity Professional</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="skills.html">Skills</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-socials">
+                <a href="javascript:void(0)" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="javascript:void(0)" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="javascript:void(0)" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Josiah Luke Bustos. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="portfolio.js"></script>
+</body>
+
+</html>

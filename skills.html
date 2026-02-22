@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Skills | Josiah Luke Bustos</title>
+    <meta name="description" content="Technical skills and competencies of Josiah Luke Bustos.">
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- ======================== HEADER / NAV ======================== -->
+    <header id="header">
+        <nav class="navbar">
+            <a href="index.html" class="logo" aria-label="Home">
+                <svg viewBox="0 0 60 60" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="4" y="4" width="52" height="52" rx="8" stroke="#c9a84c" stroke-width="3" />
+                    <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle"
+                        font-family="Playfair Display, serif" font-size="26" font-weight="700" fill="#c9a84c">JL</text>
+                </svg>
+            </a>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Me</a></li>
+                <li><a href="skills.html" class="nav-link active">Skills</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ======================== SKILLS SECTION ======================== -->
+    <main>
+        <section id="skills" class="skills" style="padding-top: 120px;">
+            <div class="section-container">
+                <h2 class="section-title reveal">My <span class="gold">Skills</span></h2>
+
+                <!-- ---- Web Technologies ---- -->
+                <div class="skills-category reveal delay-1">
+                    <h3 class="about-section-heading"><i class="fas fa-globe"></i> Web Technologies</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                            <h3>HTML5 & CSS3</h3>
+                            <p>Responsive website structure and styling.</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fab fa-js-square"></i></div>
+                            <h3>JavaScript</h3>
+                            <p>Implementation of interactivity, API handling, and form validation.</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fab fa-php"></i></div>
+                            <h3>PHP</h3>
+                            <p>Server-side scripting for dynamic systems.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ---- Application & System Development ---- -->
+                <div class="skills-category reveal delay-2">
+                    <h3 class="about-section-heading"><i class="fas fa-laptop-code"></i> Application & System
+                        Development</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fas fa-window-maximize"></i></div>
+                            <h3>VB.NET</h3>
+                            <p>Developing desktop-based applications and system logic.</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fab fa-android"></i></div>
+                            <h3>Java (Android Studio)</h3>
+                            <p>Building and deploying mobile applications.</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fas fa-database"></i></div>
+                            <h3>SQL</h3>
+                            <p>Database management and structured data querying.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ---- Hardware & Specialized Tech ---- -->
+                <div class="skills-category reveal delay-3">
+                    <h3 class="about-section-heading"><i class="fas fa-microchip"></i> Hardware & Specialized Tech</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fas fa-microchip"></i></div>
+                            <h3>Arduino</h3>
+                            <p>Prototyping hardware-software integrations and IoT concepts.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- ======================== FOOTER ======================== -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Josiah Luke <span class="gold">Bustos</span></h3>
+                <p>Aspiring Cybersecurity Professional</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="skills.html">Skills</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-socials">
+                <a href="javascript:void(0)" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="javascript:void(0)" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="javascript:void(0)" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Josiah Luke Bustos. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="portfolio.js"></script>
+</body>
+
+</html>
