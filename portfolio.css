@@ -242,14 +242,15 @@ ul {
 }
 
 .hero-name {
-    font-family: var(--font-heading);
-    font-size: clamp(2.5rem, 6vw, 4.2rem);
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
     font-weight: 700;
-    font-style: italic;
+    font-style: normal;
     line-height: 1.15;
     color: var(--gold);
     margin-bottom: 16px;
     text-shadow: 0 0 40px rgba(201, 168, 76, 0.15);
+    white-space: nowrap;
 }
 
 .hero-subtitle {
@@ -259,12 +260,28 @@ ul {
     line-height: 1.5;
 }
 
+.hero-degree {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    letter-spacing: 0.5px;
+}
+
+.hero-tagline {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+
 .hero-description {
     margin-top: 20px;
     font-size: 0.95rem;
-    color: var(--gold-dark);
+    color: #ffffff;
     line-height: 1.8;
-    max-width: 460px;
+    max-width: 540px;
     font-style: italic;
 }
 
@@ -314,6 +331,7 @@ ul {
 /* Hero image */
 .hero-image {
     flex-shrink: 0;
+    margin-right: 80px;
 }
 
 .image-frame {
@@ -323,8 +341,25 @@ ul {
     overflow: hidden;
     position: relative;
     border: 3px solid rgba(201, 168, 76, 0.35);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(201, 168, 76, 0.08);
+    box-shadow:
+        0 10px 30px rgba(201, 168, 76, 0.25),
+        0 20px 60px rgba(201, 168, 76, 0.15),
+        0 0 80px rgba(201, 168, 76, 0.1),
+        0 30px 80px rgba(0, 0, 0, 0.4);
     background: var(--bg-secondary);
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
 }
 
 .image-frame img {
@@ -333,21 +368,7 @@ ul {
     object-fit: cover;
 }
 
-.image-glow {
-    position: absolute;
-    inset: -4px;
-    border-radius: inherit;
-    background: conic-gradient(from 45deg, transparent, var(--gold-glow), transparent, var(--gold-glow), transparent);
-    z-index: -1;
-    animation: rotate-glow 8s linear infinite;
-    opacity: 0.5;
-}
 
-@keyframes rotate-glow {
-    to {
-        transform: rotate(360deg);
-    }
-}
 
 /* Scroll indicator */
 .scroll-indicator {
