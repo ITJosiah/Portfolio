@@ -280,6 +280,7 @@ ul {
     margin-top: 20px;
     font-size: 0.95rem;
     color: #ffffff;
+    text-align: justify;
     line-height: 1.8;
     max-width: 540px;
     font-style: italic;
