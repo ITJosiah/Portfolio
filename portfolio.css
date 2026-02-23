@@ -319,6 +319,18 @@ ul {
 }
 
 .btn-outline {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: #0d0d0d;
+    border: none;
+    box-shadow: 0 4px 20px rgba(201, 168, 76, 0.3);
+}
+
+.btn-outline:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(201, 168, 76, 0.45);
+}
+
+.btn-about-outline {
     border: 1.5px solid var(--gold);
     color: var(--gold);
     background: transparent;
@@ -326,7 +338,7 @@ ul {
     text-shadow: 0 0 5px rgba(201, 168, 76, 0.4);
 }
 
-.btn-outline:hover {
+.btn-about-outline:hover {
     background: rgba(201, 168, 76, 0.1);
     transform: translateY(-2px);
     box-shadow: 0 0 20px rgba(201, 168, 76, 0.6), inset 0 0 15px rgba(201, 168, 76, 0.3);
