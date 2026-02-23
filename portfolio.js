@@ -107,26 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(tick);
     }
 
-    // ---------- CONTACT FORM HANDLER ----------
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = contactForm.querySelector('button');
-            const originalText = btn.textContent;
 
-            btn.textContent = 'Sending...';
-            btn.disabled = true;
-
-            // Simulate sending
-            setTimeout(() => {
-                alert('Thank you, Josiah will get back to you soon!');
-                contactForm.reset();
-                btn.textContent = originalText;
-                btn.disabled = false;
-            }, 1500);
-        });
-    }
 
     // ---------- SMOOTH SCROLL (FALLBACK) ----------
 
