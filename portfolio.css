@@ -950,6 +950,10 @@ ul {
         justify-content: center;
     }
 
+    .hero-image {
+        margin: 0 auto;
+    }
+
     .image-frame {
         width: 220px;
         height: 270px;
